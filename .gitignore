@@ -8,6 +8,7 @@ lfw/
 logs/
 model_data/
 metrics_out/
+images/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
