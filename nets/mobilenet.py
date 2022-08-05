@@ -80,7 +80,7 @@ def MobileNet(input_shape=None,
                               strides=(2, 2), block_id=12)
     x = _depthwise_conv_block(x, 1024, alpha, depth_multiplier, block_id=13)
 
-    # 7,7,1024 -> 1,1,1024
+    # 7,7,1024 -> 1,1,1024  全局平均池化
     x = GlobalAveragePooling2D()(x)
 
     shape = (1, 1, int(1024 * alpha))

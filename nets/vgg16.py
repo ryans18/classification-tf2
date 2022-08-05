@@ -83,7 +83,9 @@ def VGG16(input_shape=None, classes=1000):
     # 14, 14, 512 -> 7, 7, 512
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block5_pool')(x)
 
+    # 对输出结果平铺
     x = Flatten(name='flatten')(x)
+    # 神经元为4096的全连接
     x = Dense(4096, activation='relu', name='fc1')(x)
     x = Dense(4096, activation='relu', name='fc2')(x)
     x = Dense(classes, activation='softmax', name='predictions')(x)
